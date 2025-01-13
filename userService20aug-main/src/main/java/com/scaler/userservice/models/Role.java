@@ -12,5 +12,4 @@ import lombok.Setter;
 public class Role extends BaseModel {
     private String role;
     int val=10;
-
 }
