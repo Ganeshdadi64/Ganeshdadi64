@@ -18,11 +18,11 @@ public class Authorization {
 	private String principalName;
 	private String authorizationGrantType;
 	@Column(length = 1000)
-    @Lob
+    @Lob // lob means binary large objects ante database lo rows ki limit untadhi exceed ithe erro throw chestadhi so avoid that use lob
 	private String authorizedScopes;
     
 	@Column(length = 4000)
-    @Lob
+    @Lob//bu defauld row size limit is 65432 if we want to increase the row size we can use lob
 	private String attributes;
     
 	@Column(length = 500)

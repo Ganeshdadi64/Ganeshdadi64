@@ -46,6 +46,8 @@ import org.springframework.security.web.util.matcher.MediaTypeRequestMatcher;
 @EnableWebSecurity
 public class SpringSecurityConfig {
 	@Autowired
+	//WHY THIS bccript is used means manum password neee encript chesi store chestam compare chesinappudukuda
+	//enter chesina password nee encrypt chesi compare cheyyala otherwire password right ina not accepted 
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	private JpaOAuth2AuthorizationService jpaOAuth2AuthorizationService;
 
@@ -79,7 +81,7 @@ public class SpringSecurityConfig {
 		http
 			.authorizeHttpRequests((authorize) -> authorize
 				// .requestMatchers("/products/**").authenticated()
-				.anyRequest().permitAll()
+				.anyRequest().authenticated()
 			)
 			// Form login handles the redirect to the login page from the
 			// authorization server filter chain
